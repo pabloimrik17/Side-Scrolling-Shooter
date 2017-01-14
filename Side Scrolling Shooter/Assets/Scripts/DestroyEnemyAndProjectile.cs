@@ -17,12 +17,12 @@ public class DestroyEnemyAndProjectile : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag == "Collision") {
-            spawnExplosionParticle();
+            spawnExplosionParticle(collision.transform.position);
             Destroy(collision.gameObject);
         }
     } 
 
-    void spawnExplosionParticle() {
-        Instantiate(explosionParticle, new Vector3(transform.position.x, transform)
+    void spawnExplosionParticle(Vector2 position) {
+        Instantiate(explosionParticle, position, Quaternion.identity);
     }
 }

@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\PlayerWASD.cs" />
      <Compile Include="Assets\Scripts\ProjectileLogic.cs" />
+     <Compile Include="Assets\Scripts\ScoreLogic.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
