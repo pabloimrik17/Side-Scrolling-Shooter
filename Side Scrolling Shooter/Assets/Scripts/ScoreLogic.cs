@@ -16,7 +16,6 @@ public class ScoreLogic : MonoBehaviour {
 	}
 	
 	void Update () {
-        AddScore();	
 	}
 
     public void AddScore() {

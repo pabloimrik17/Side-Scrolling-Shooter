@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerWASD : MonoBehaviour {
 
@@ -23,7 +24,7 @@ public class PlayerWASD : MonoBehaviour {
         spawnProjectile();
     }
 
-    void playerMovement() {
+    private void playerMovement() {
         if(Input.GetKey(KeyCode.W) && transform.position.y <= maxPlayerY) {
             transform.Translate(0, playerMovementSpeed, 0);
         } else if (Input.GetKey(KeyCode.A) && transform.position.x >= -maxPlayerX) {
@@ -35,9 +36,15 @@ public class PlayerWASD : MonoBehaviour {
         }
     }
 
-    void spawnProjectile() {
+    private void spawnProjectile() {
         if(Input.GetKeyDown(KeyCode.K)) {
             Instantiate(projectile, new Vector3(transform.position.x + projectileXOffset, transform.position.y, 0), Quaternion.identity);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Collision") {
+            SceneManager.LoadScene("GameScene");
         }
     }
 }
